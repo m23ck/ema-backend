@@ -8,6 +8,7 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
+import { Prisma, PrismaClient } from '@prisma/client';
 import { CreateMedewerkerDto, EditMedewerkerDto } from './dto';
 import { MedewerkerService } from './medewerker.service';
 
@@ -26,8 +27,20 @@ export class MedewerkerController {
   }
 
   @Post()
-  createMedewerker(@Body() dto: CreateMedewerkerDto) {
-    return this.medewerkerService.createMedewerker(dto);
+  async createMedewerker(@Body() dto: CreateMedewerkerDto) {
+    try {
+      await this.medewerkerService.createMedewerker(dto);
+    } catch (e) {
+      if (e instanceof Prisma.PrismaClientKnownRequestError) {
+        // The .code property can be accessed in a type-safe manner
+        if (e.code === 'P2002') {
+          console.log(
+            'There is a unique constraint violation, a new user cannot be created with this email'
+          )
+        }
+      }
+      throw e
+    }
   }
 
   @Patch(':id')
