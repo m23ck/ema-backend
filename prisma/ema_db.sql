@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2022 at 04:05 AM
+-- Generation Time: Mar 15, 2022 at 04:48 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -47,8 +47,8 @@ CREATE TABLE `medewerkers` (
 --
 
 INSERT INTO `medewerkers` (`id`, `createdAt`, `updatedAt`, `isActive`, `voornaam`, `achternaam`, `geslacht`, `email`, `telefoon`, `straatnaam`, `huisnummer`, `district`) VALUES
-(11, '2022-03-15 00:54:19.087', '2022-03-15 02:03:37.917', 1, 'tafarel', 'Mack', 'Man', 'andojomack@gmail.com', 7254402, 'Salvadorstraat', '5', 'Paramaribo'),
-(12, '2022-03-15 01:13:14.617', '2022-03-15 02:22:17.795', 0, 'Mitchel', 'Pawirodinomo', 'Man', 'pimpin@gmail.com', 8781953, 'pawirostraat', '6', 'Wanica');
+(11, '2022-03-15 00:54:19.087', '2022-03-15 03:46:59.216', 1, 'Andojo', 'Mack', 'Man', 'andojomack@gmail.com', 8409113, 'Salvadorstraat', '5', 'Paramaribo'),
+(12, '2022-03-15 01:13:14.617', '2022-03-15 03:47:38.999', 0, 'Joel', 'Naarendorp', 'Man', 'jnar@gmail.com', 8781953, 'indirastraat', '45A', 'Wanica');
 
 -- --------------------------------------------------------
 
